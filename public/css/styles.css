@@ -1,0 +1,16 @@
+body {
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+.navbar-brand {
+  letter-spacing: 0.5px;
+}
+
+#map {
+  min-height: 300px;
+}
+
+footer {
+  background: #111;
+  color: #bbb;
+}
