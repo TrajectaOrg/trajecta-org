@@ -30,7 +30,14 @@ app.use("/talks", talksRouter);
 
 // 404
 app.use((req, res) => {
-  res.status(404).render("404", { title: "Not found" });
+  res.status(404).render("404", { 
+    title: "Not found",
+    url: req.url,
+    canonical: "https://trajecta.org" + req.url,
+    metaDescription: "The page you're looking for could not be found on Trajecta.",
+    ogTitle: "Page Not Found · Trajecta",
+    ogImage: "https://trajecta.org/img/og-default.jpg"
+  });
 });
 
 const PORT = process.env.PORT || 5000;

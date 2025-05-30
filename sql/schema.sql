@@ -21,3 +21,20 @@ CREATE TABLE talks (
   video_url TEXT,
   published_at DATE DEFAULT CURRENT_DATE
 );
+
+CREATE TABLE seminars (
+  id SERIAL PRIMARY KEY,
+  topic TEXT,
+  host TEXT,
+  date DATE,
+  link TEXT
+);
+
+CREATE TABLE career_moves (
+  id SERIAL PRIMARY KEY,
+  alumnus_id INT REFERENCES alumni(id),
+  current_city TEXT,
+  lat FLOAT,
+  lng FLOAT,
+  moved_at DATE DEFAULT CURRENT_DATE
+);

@@ -12,10 +12,4 @@ const pool = new Pool({
   ssl: process.env.PG_SSL_REJECT_UNAUTHORIZED === 'false' ? { rejectUnauthorized: false } : undefined
 });
 
-console.log("password: " + process.env.PG_PASSWORD);
-console.log("ssl: " + process.env.PG_SSL_REJECT_UNAUTHORIZED);
-console.log("user: " + process.env.PG_USER);
-console.log("host: " + process.env.PG_HOST);
-console.log("database: " + process.env.PG_DATABASE);
-console.log("port: " + process.env.PG_PORT);
 export default pool; 

@@ -1,0 +1,41 @@
+.bg-blur {
+    background: rgba(17,17,17,.75)!important;
+    backdrop-filter: blur(12px);
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-3px);
+    transition: .2s;
+  }
+  
+  .timeline {
+    position: relative;
+    list-style: none;
+    padding-left: 0;
+  }
+  .timeline:before {
+    content:'';
+    position:absolute;
+    left:8px;
+    top:0;
+    bottom:0;
+    width:2px;
+    background:#0d6efd;
+  }
+  .timeline li {
+    position:relative;
+    padding-left:28px;
+    margin-bottom:12px;
+  }
+  .timeline li:before {
+    content:'';
+    position:absolute;
+    left:0;
+    top:4px;
+    width:12px;
+    height:12px;
+    border-radius:50%;
+    background:#fff;
+    border:2px solid #0d6efd;
+  }
+  

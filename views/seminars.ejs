@@ -1,0 +1,24 @@
+<% layout("layout") -%>
+
+<header class="mb-4">
+  <h1 class="h2 fw-bold"><i class="ph-chalkboard-teacher me-1"></i>Live Seminars</h1>
+  <p class="text-muted">Join interactive sessions, change your gradient.</p>
+</header>
+
+<table class="table align-middle shadow-sm">
+  <thead class="table-light">
+    <tr>
+      <th>Date</th><th>Topic</th><th>Host</th><th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% seminars.forEach(s=>{ %>
+      <tr>
+        <td><%= s.date %></td>
+        <td><%= s.topic %></td>
+        <td><%= s.host %></td>
+        <td><a href="<%= s.link %>" class="btn btn-sm btn-success" target="_blank">Join</a></td>
+      </tr>
+    <% }) %>
+  </tbody>
+</table>

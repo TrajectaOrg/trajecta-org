@@ -1,26 +1,55 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container">
-    <a class="navbar-brand fw-bold" href="/">Trajecta</a>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#nav"
-    >
-      <span class="navbar-toggler-icon"></span>
+<!-- Skip‑nav for accessibility -->
+<a href="#main" class="visually-hidden-focusable">Skip to content</a>
+
+<header class="shadow-sm bg-blur-dark">
+  <nav class="container-lg d-flex align-items-center py-2" aria-label="Primary">
+    <!-- Logo -->
+    <a href="/" class="d-flex align-items-center me-auto text-decoration-none">
+      <img src="/img/logo.svg" width="28" height="28" alt="Trajecta logo" class="text-warning">
+      <span class="fs-4 fw-bold ms-2 text-black">Trajecta</span>
+    </a>
+
+    <!-- Desktop nav -->
+    <ul class="d-none d-lg-flex list-unstyled mb-0 gap-4">
+      <li><a class="nav-link" href="/alumni" aria-current="<%= url.startsWith('/alumni') %>">Alumni</a></li>
+      <li><a class="nav-link" href="/seminars">Seminars</a></li>
+      <li><a class="nav-link" href="/forum">Forum</a></li>
+      <li><a class="nav-link" href="/talks">Talks</a></li>
+    </ul>
+
+    <!-- Search (small screens hidden by default)-->
+    <form class="d-none d-lg-block ms-4" action="/search" role="search">
+      <label class="visually-hidden" for="nav-search">Search</label>
+      <input id="nav-search" name="q" type="search" class="form-control form-control-sm" placeholder="Search alumni…" />
+    </form>
+
+    <!-- CTA -->
+    <a class="btn btn-warning btn-sm ms-lg-4" href="/auth/login">
+      <i class="ph-sign-in me-1"></i> Sign in
+    </a>
+
+    <!-- Mobile toggle -->
+    <button class="navbar-toggler d-lg-none ms-3" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNav" aria-label="Toggle navigation">
+      <i class="ph-list text-white fs-3"></i>
     </button>
-    <div class="collapse navbar-collapse" id="nav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="/alumni">Alumni</a></li>
-        <li class="nav-item"><a class="nav-link" href="/talks">Talks</a></li>
-        <li class="nav-item">
-          <a
-            class="btn btn-sm btn-warning ms-lg-3"
-            href="https://forms.gle/yourWaitlistForm"
-            >Join Beta</a
-          >
-        </li>
-      </ul>
-    </div>
+  </nav>
+</header>
+
+<!-- Off‑canvas for mobile -->
+<div class="offcanvas offcanvas-end bg-dark text-white" tabindex="-1" id="offcanvasNav">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title">Menu</h5>
+    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
   </div>
-</nav>
+  <div class="offcanvas-body">
+    <ul class="list-unstyled fs-5">
+      <li><a class="text-decoration-none d-block py-2" href="/alumni">Alumni</a></li>
+      <li><a class="text-decoration-none d-block py-2" href="/seminars">Seminars</a></li>
+      <li><a class="text-decoration-none d-block py-2" href="/forum">Forum</a></li>
+      <li><a class="text-decoration-none d-block py-2" href="/talks">Talks</a></li>
+    </ul>
+    <form class="mt-4" action="/search" role="search">
+      <input name="q" class="form-control" placeholder="Search…" />
+    </form>
+  </div>
+</div>

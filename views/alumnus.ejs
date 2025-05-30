@@ -1,0 +1,49 @@
+<% layout("layout") -%>
+
+<section class="row g-4">
+  <div class="col-lg-4">
+    <div class="card shadow-sm">
+      <div class="card-body text-center">
+        <img src="/img/avatar_placeholder.svg" class="rounded-circle mb-3" width="120" height="120" alt="">
+        <h2 class="h4 fw-bold mb-0"><%= alumnus.name %></h2>
+        <p class="small text-muted"><%= alumnus.olympiad %> <%= alumnus.year %> – <%= alumnus.medal %></p>
+        <p><i class="ph-map-pin me-1"></i><%= alumnus.country %></p>
+
+        <% if(alumnus.socials){ %>
+          <div class="d-flex justify-content-center gap-2">
+            <% Object.entries(alumnus.socials).forEach(([k,v])=>{ %>
+              <a href="<%=v%>" class="text-decoration-none" target="_blank"><i class="ph-<%=k%>-logo"></i></a>
+            <% }) %>
+          </div>
+        <% } %>
+      </div>
+    </div>
+
+    <!-- Map -->
+    <div id="map" class="rounded mt-4" style="height: 250px;"></div>
+  </div>
+
+  <div class="col-lg-8">
+    <h3 class="h5 mb-3">Trajectory Timeline</h3>
+    <ul class="timeline">
+      <% alumnus.education.forEach(item=>{ %>
+      <li>
+        <span class="badge bg-primary"><%= item.start %>–<%= item.end||"Now" %></span>
+        <strong class="ms-2"><%= item.institution %></strong>
+        <p class="mb-1"><%= item.degree||"" %></p>
+      </li>
+      <% }) %>
+    </ul>
+
+    <% if (alumnus.publications?.length) { %>
+    <h4 class="h6 mt-4">Key publications</h4>
+    <ul class="list-unstyled">
+      <% alumnus.publications.slice(0,5).forEach(pub=>{ %>
+        <li class="mb-2"><i class="ph-file-text me-1"></i><%= pub %></li>
+      <% }) %>
+    </ul>
+    <% } %>
+  </div>
+</section>
+
+<script src="/js/map.js"></script>
