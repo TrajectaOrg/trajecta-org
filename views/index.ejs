@@ -1,27 +1,227 @@
 <% layout("layout") -%>
 
-<div class="text-center py-5">
-  <h1 class="display-4 fw-bold">Mapping the paths of world‑changers</h1>
-  <p class="lead">
-    Explore 50 000+ Olympiad medalists, researchers and founders.  
-    See where they started, where they went, and how you can follow.
-  </p>
-  <a href="/alumni" class="btn btn-primary btn-lg">Browse Alumni</a>
-</div>
-
-<section class="row g-4 py-5">
-  <div class="col-md-6">
-    <h2 class="h3">Trajecta Talk of the Week</h2>
-    <div class="ratio ratio-16x9 border rounded">
-      <iframe
-        src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-        title="Interview video"
-        allowfullscreen
-      ></iframe>
+<!-- Hero Section with Gradient Background -->
+<section class="hero-section position-relative overflow-hidden" style="min-height: 90vh; background: var(--gradient-dark);">
+  <!-- Animated background pattern -->
+  <div class="position-absolute top-0 start-0 w-100 h-100" style="opacity: 0.03; background-image: url('data:image/svg+xml,%3Csvg width="60" height="60" xmlns="http://www.w3.org/2000/svg"%3E%3Cdefs%3E%3Cpattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse"%3E%3Cpath d="M 60 0 L 0 0 0 60" fill="none" stroke="white" stroke-width="1"/%3E%3C/pattern%3E%3C/defs%3E%3Crect width="100%25" height="100%25" fill="url(%23grid)"/%3E%3C/svg%3E');"></div>
+  
+  <!-- Gradient overlay -->
+  <div class="position-absolute top-0 start-0 w-100 h-100" style="background: var(--gradient-glow); opacity: 0.3;"></div>
+  
+  <div class="container-lg position-relative z-1 d-flex align-items-center" style="min-height: 90vh;">
+    <div class="row align-items-center w-100">
+      <div class="col-lg-7 text-center text-lg-start mb-5 mb-lg-0">
+        <div class="badge-modern mb-3 fade-in">
+          <i class="ph-sparkle me-1"></i> World's #1 Talent Platform
+        </div>
+        <h1 class="display-2 fw-bold mb-4 fade-in">
+          Map Your Path to
+          <span class="d-block gradient-text" data-typewriter='["Global Impact", "Academic Excellence", "Entrepreneurship", "Research Breakthroughs"]'>Global Impact</span>
+        </h1>
+        <p class="lead mb-5 fade-in" style="color: var(--text-secondary);">
+          Join 1M+ future leaders exploring real trajectories of Olympiad medalists,<br class="d-none d-lg-block">
+          founders, and researchers. Discover where they started and how they succeeded.
+        </p>
+        <div class="d-flex gap-3 justify-content-center justify-content-lg-start fade-in">
+          <a href="/alumni" class="btn btn-modern btn-modern-primary btn-lg hover-lift">
+            <i class="ph-compass me-2"></i> Explore Alumni
+          </a>
+          <a href="/planner" class="btn btn-modern btn-modern-secondary btn-lg">
+            <i class="ph-chart-line-up me-2"></i> Plan Your Trajectory
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-5">
+        <div class="position-relative" data-parallax="0.3">
+          <!-- 3D Globe or Network Visualization placeholder -->
+          <div class="glass-card p-5 text-center fade-in">
+            <div class="mb-4">
+              <svg width="300" height="300" viewBox="0 0 300 300" class="w-100" style="max-width: 300px;">
+                <circle cx="150" cy="150" r="140" fill="none" stroke="url(#gradient)" stroke-width="2" opacity="0.3"/>
+                <circle cx="150" cy="150" r="120" fill="none" stroke="url(#gradient)" stroke-width="1" opacity="0.2"/>
+                <circle cx="150" cy="150" r="100" fill="none" stroke="url(#gradient)" stroke-width="1" opacity="0.1"/>
+                <defs>
+                  <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#FFBB00;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#FFC933;stop-opacity:1" />
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+            <h3 class="h5 mb-2">Global Network</h3>
+            <p class="text-muted mb-0">50,000+ trajectories mapped</p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="col-md-6">
-    <h2 class="h3">Where do medalists go?</h2>
-    <div id="map" class="rounded border" style="height: 300px;"></div>
+</section>
+
+<!-- Stats Section -->
+<section class="py-5 container-lg">
+  <div class="row g-4 text-center">
+    <div class="col-md-3 col-6">
+      <div class="glass-card py-4 hover-lift">
+        <h2 class="display-4 fw-bold gradient-text mb-2" data-counter="50000">0</h2>
+        <p class="text-secondary mb-0">Alumni Profiles</p>
+      </div>
+    </div>
+    <div class="col-md-3 col-6">
+      <div class="glass-card py-4 hover-lift">
+        <h2 class="display-4 fw-bold gradient-text mb-2" data-counter="180">0</h2>
+        <p class="text-secondary mb-0">Countries</p>
+      </div>
+    </div>
+    <div class="col-md-3 col-6">
+      <div class="glass-card py-4 hover-lift">
+        <h2 class="display-4 fw-bold gradient-text mb-2" data-counter="1200">0</h2>
+        <p class="text-secondary mb-0">Weekly Seminars</p>
+      </div>
+    </div>
+    <div class="col-md-3 col-6">
+      <div class="glass-card py-4 hover-lift">
+        <h2 class="display-4 fw-bold gradient-text mb-2" data-counter="95">0</h2>
+        <p class="text-secondary mb-0">% Success Rate</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Featured Content -->
+<section class="py-5 container-lg">
+  <div class="text-center mb-5">
+    <h2 class="display-5 fw-bold mb-3">Discover Trajectories</h2>
+    <p class="lead text-secondary">Real stories from real achievers</p>
+  </div>
+  
+  <div class="row g-4">
+    <!-- Trajecta Talk -->
+    <div class="col-lg-8">
+      <div class="glass-card h-100">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h3 class="h4 mb-0">
+            <i class="ph-video-camera me-2" style="color: var(--primary);"></i>
+            Featured Talk
+          </h3>
+          <span class="badge-modern">
+            <i class="ph-broadcast me-1"></i> Live
+          </span>
+        </div>
+        <div class="ratio ratio-16x9 rounded overflow-hidden mb-3">
+          <iframe
+            src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+            title="Trajecta Talk"
+            allowfullscreen
+            class="rounded"
+          ></iframe>
+        </div>
+        <h4 class="h5 mb-2">From IMO Gold to Google DeepMind</h4>
+        <p class="text-secondary mb-3">Sarah Chen shares her journey from winning International Math Olympiad gold at 16 to leading AI research at DeepMind.</p>
+        <div class="d-flex gap-3">
+          <a href="/talks" class="btn btn-modern btn-modern-primary btn-sm">
+            Watch More Talks
+          </a>
+          <button class="btn btn-modern btn-modern-secondary btn-sm">
+            <i class="ph-share-network me-1"></i> Share
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Upcoming Events -->
+    <div class="col-lg-4">
+      <div class="glass-card h-100">
+        <h3 class="h4 mb-4">
+          <i class="ph-calendar-check me-2" style="color: var(--primary);"></i>
+          Upcoming
+        </h3>
+        <div class="timeline-modern">
+          <div class="timeline-item">
+            <div class="timeline-dot active"></div>
+            <div class="mb-3">
+              <h5 class="h6 mb-1">Physics Olympiad Winners Panel</h5>
+              <p class="text-muted small mb-1">Tomorrow, 3:00 PM EST</p>
+              <span class="badge-modern">12 spots left</span>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="mb-3">
+              <h5 class="h6 mb-1">Startup Founders Meetup</h5>
+              <p class="text-muted small mb-1">Dec 28, 5:00 PM EST</p>
+              <span class="badge-modern">Virtual</span>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="mb-3">
+              <h5 class="h6 mb-1">Research Path Workshop</h5>
+              <p class="text-muted small mb-1">Dec 30, 2:00 PM EST</p>
+              <span class="badge-modern">Free</span>
+            </div>
+          </div>
+        </div>
+        <a href="/seminars" class="btn btn-modern btn-modern-secondary btn-sm w-100 mt-3">
+          View All Events
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Interactive Map Section -->
+<section class="py-5 container-lg">
+  <div class="glass-card">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h3 class="h4 mb-0">
+        <i class="ph-map-trifold me-2" style="color: var(--primary);"></i>
+        Where Alumni Go
+      </h3>
+      <div class="btn-group" role="group">
+        <button class="btn btn-modern btn-modern-secondary btn-sm active">Universities</button>
+        <button class="btn btn-modern btn-modern-secondary btn-sm">Companies</button>
+        <button class="btn btn-modern btn-modern-secondary btn-sm">Research Labs</button>
+      </div>
+    </div>
+    <div id="map" class="rounded" style="height: 400px; background: rgba(20, 21, 25, 0.5); border: 1px solid rgba(255, 255, 255, 0.05);">
+      <!-- Map will be initialized here -->
+    </div>
+    <div class="row g-3 mt-3">
+      <div class="col-md-4">
+        <div class="d-flex align-items-center">
+          <div class="rounded-circle bg-warning me-3" style="width: 12px; height: 12px;"></div>
+          <span class="text-secondary">MIT: 2,341 alumni</span>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="d-flex align-items-center">
+          <div class="rounded-circle bg-info me-3" style="width: 12px; height: 12px;"></div>
+          <span class="text-secondary">Stanford: 1,876 alumni</span>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="d-flex align-items-center">
+          <div class="rounded-circle bg-success me-3" style="width: 12px; height: 12px;"></div>
+          <span class="text-secondary">Harvard: 1,654 alumni</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="py-5 container-lg mb-5">
+  <div class="glass-card text-center py-5" style="background: linear-gradient(135deg, rgba(255, 187, 0, 0.1) 0%, rgba(255, 187, 0, 0.05) 100%);">
+    <h2 class="display-5 fw-bold mb-3">Ready to Chart Your Trajectory?</h2>
+    <p class="lead text-secondary mb-4">Join thousands of ambitious minds building their path to excellence</p>
+    <div class="d-flex gap-3 justify-content-center">
+      <a href="/auth/signup" class="btn btn-modern btn-modern-primary btn-lg hover-lift">
+        <i class="ph-rocket-launch me-2"></i> Get Started Free
+      </a>
+      <a href="/demo" class="btn btn-modern btn-modern-secondary btn-lg">
+        <i class="ph-play-circle me-2"></i> Watch Demo
+      </a>
+    </div>
+    <p class="text-muted mt-3">No credit card required • 5 minute setup</p>
   </div>
 </section>

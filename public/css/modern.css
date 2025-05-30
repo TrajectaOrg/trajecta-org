@@ -1,0 +1,397 @@
+/* ===== Trajecta Modern Design System ===== */
+
+:root {
+  /* Modern Color Palette */
+  --primary: #FFBB00;
+  --primary-light: #FFC933;
+  --primary-dark: #E6A700;
+  
+  --dark: #0A0B0D;
+  --dark-secondary: #141519;
+  --dark-tertiary: #1C1D23;
+  
+  --text-primary: #FAFAFA;
+  --text-secondary: #B4B6BD;
+  --text-muted: #7C7E87;
+  
+  --success: #10B981;
+  --danger: #EF4444;
+  --info: #3B82F6;
+  
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+  --gradient-dark: linear-gradient(180deg, var(--dark) 0%, var(--dark-secondary) 100%);
+  --gradient-glow: radial-gradient(circle at 50% 0%, rgba(255, 187, 0, 0.1) 0%, transparent 50%);
+  
+  /* Spacing */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-2xl: 4rem;
+  
+  /* Typography */
+  --font-display: 'Inter var', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Consolas', monospace;
+  
+  /* Animations */
+  --transition-base: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.2), 0 4px 6px rgba(0, 0, 0, 0.15);
+  --shadow-glow: 0 0 20px rgba(255, 187, 0, 0.3);
+}
+
+/* ===== Base Styles ===== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-display);
+  background-color: var(--dark);
+  color: var(--text-primary);
+  line-height: 1.6;
+  font-feature-settings: 'ss01' on, 'ss03' on;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ===== Modern Navigation ===== */
+.navbar-modern {
+  background: rgba(10, 11, 13, 0.8);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  transition: var(--transition-base);
+}
+
+.navbar-modern.scrolled {
+  background: rgba(10, 11, 13, 0.95);
+  box-shadow: var(--shadow-lg);
+}
+
+.nav-link-modern {
+  color: var(--text-secondary);
+  font-weight: 500;
+  position: relative;
+  padding: 0.5rem 1rem;
+  transition: var(--transition-base);
+}
+
+.nav-link-modern::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--gradient-primary);
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
+}
+
+.nav-link-modern:hover,
+.nav-link-modern.active {
+  color: var(--text-primary);
+}
+
+.nav-link-modern:hover::after,
+.nav-link-modern.active::after {
+  width: 80%;
+}
+
+/* ===== Modern Buttons ===== */
+.btn-modern {
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  transition: var(--transition-base);
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.btn-modern-primary {
+  background: var(--gradient-primary);
+  color: var(--dark);
+  border: none;
+  box-shadow: 0 4px 15px rgba(255, 187, 0, 0.3);
+}
+
+.btn-modern-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 187, 0, 0.4);
+}
+
+.btn-modern-secondary {
+  background: transparent;
+  color: var(--text-primary);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.btn-modern-secondary:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* ===== Glass Card Components ===== */
+.glass-card {
+  background: rgba(20, 21, 25, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 1rem;
+  padding: var(--space-lg);
+  transition: var(--transition-base);
+}
+
+.glass-card:hover {
+  background: rgba(20, 21, 25, 0.7);
+  border-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ===== Modern Form Inputs ===== */
+.form-modern {
+  background: rgba(28, 29, 35, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.5rem;
+  color: var(--text-primary);
+  padding: 0.75rem 1rem;
+  transition: var(--transition-base);
+}
+
+.form-modern:focus {
+  background: rgba(28, 29, 35, 0.8);
+  border-color: var(--primary);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 187, 0, 0.1);
+}
+
+.form-modern::placeholder {
+  color: var(--text-muted);
+}
+
+/* ===== Search Bar Modern ===== */
+.search-modern {
+  position: relative;
+}
+
+.search-modern input {
+  padding-left: 2.5rem;
+}
+
+.search-modern::before {
+  content: '🔍';
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.5;
+}
+
+/* ===== Footer Modern ===== */
+.footer-modern {
+  background: var(--gradient-dark);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.footer-modern::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  background: var(--gradient-glow);
+  opacity: 0.5;
+}
+
+.footer-link-modern {
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: var(--transition-base);
+  position: relative;
+}
+
+.footer-link-modern:hover {
+  color: var(--primary);
+  transform: translateX(3px);
+}
+
+/* ===== Badge Components ===== */
+.badge-modern {
+  background: rgba(255, 187, 0, 0.1);
+  color: var(--primary);
+  border: 1px solid rgba(255, 187, 0, 0.2);
+  padding: 0.25rem 0.75rem;
+  border-radius: 2rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+/* ===== Loading States ===== */
+.skeleton {
+  background: linear-gradient(90deg, 
+    rgba(255, 255, 255, 0.05) 25%, 
+    rgba(255, 255, 255, 0.1) 50%, 
+    rgba(255, 255, 255, 0.05) 75%);
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s infinite;
+  border-radius: 0.25rem;
+}
+
+@keyframes skeleton-loading {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ===== Hover Effects ===== */
+.hover-glow {
+  transition: var(--transition-base);
+}
+
+.hover-glow:hover {
+  box-shadow: var(--shadow-glow);
+}
+
+.hover-lift {
+  transition: var(--transition-base);
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+}
+
+/* ===== Icon Animations ===== */
+.icon-pulse {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+/* ===== Modern Timeline ===== */
+.timeline-modern {
+  position: relative;
+}
+
+.timeline-modern::before {
+  content: '';
+  position: absolute;
+  left: 20px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, var(--primary) 0%, transparent 100%);
+}
+
+.timeline-item {
+  position: relative;
+  padding-left: 50px;
+  margin-bottom: 2rem;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: 10px;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--dark);
+  border: 2px solid var(--primary);
+  z-index: 1;
+}
+
+.timeline-dot.active {
+  background: var(--primary);
+  box-shadow: var(--shadow-glow);
+}
+
+/* ===== Gradient Text ===== */
+.gradient-text {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ===== Modern Scrollbar ===== */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--dark-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 187, 0, 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 187, 0, 0.5);
+}
+
+/* ===== Responsive Grid System ===== */
+.grid-modern {
+  display: grid;
+  gap: var(--space-lg);
+}
+
+@media (min-width: 768px) {
+  .grid-modern-2 { grid-template-columns: repeat(2, 1fr); }
+  .grid-modern-3 { grid-template-columns: repeat(3, 1fr); }
+  .grid-modern-4 { grid-template-columns: repeat(4, 1fr); }
+}
+
+/* ===== Fade In Animation ===== */
+.fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Mobile Optimizations ===== */
+@media (max-width: 767px) {
+  :root {
+    --space-lg: 1.5rem;
+    --space-xl: 2rem;
+  }
+  
+  .glass-card {
+    padding: var(--space-md);
+  }
+}
+
+/* ===== Performance Optimizations ===== */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+} 

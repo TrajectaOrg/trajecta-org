@@ -1,55 +1,119 @@
 <!-- Skip‑nav for accessibility -->
 <a href="#main" class="visually-hidden-focusable">Skip to content</a>
 
-<header class="shadow-sm bg-blur-dark">
-  <nav class="container-lg d-flex align-items-center py-2" aria-label="Primary">
-    <!-- Logo -->
-    <a href="/" class="d-flex align-items-center me-auto text-decoration-none">
-      <img src="/img/logo.svg" width="28" height="28" alt="Trajecta logo" class="text-warning">
-      <span class="fs-4 fw-bold ms-2 text-black">Trajecta</span>
+<header class="navbar-modern sticky-top" id="main-nav">
+  <nav class="container-lg d-flex align-items-center py-3" aria-label="Primary">
+    <!-- Logo with animation -->
+    <a href="/" class="d-flex align-items-center me-auto text-decoration-none hover-lift">
+      <div class="position-relative">
+        <img src="/img/logo.svg" width="32" height="32" alt="Trajecta logo" class="icon-pulse">
+        <div class="position-absolute top-0 start-0 w-100 h-100 rounded-circle bg-warning opacity-25 blur"></div>
+      </div>
+      <span class="fs-4 fw-bold ms-3 gradient-text">Trajecta</span>
     </a>
 
-    <!-- Desktop nav -->
-    <ul class="d-none d-lg-flex list-unstyled mb-0 gap-4">
-      <li><a class="nav-link" href="/alumni" aria-current="<%= url.startsWith('/alumni') %>">Alumni</a></li>
-      <li><a class="nav-link" href="/seminars">Seminars</a></li>
-      <li><a class="nav-link" href="/forum">Forum</a></li>
-      <li><a class="nav-link" href="/talks">Talks</a></li>
+    <!-- Desktop nav with modern styling -->
+    <ul class="d-none d-lg-flex list-unstyled mb-0 gap-2 align-items-center">
+      <li><a class="nav-link-modern <%= url.startsWith('/alumni') ? 'active' : '' %>" href="/alumni">Alumni</a></li>
+      <li><a class="nav-link-modern <%= url.startsWith('/seminars') ? 'active' : '' %>" href="/seminars">Seminars</a></li>
+      <li><a class="nav-link-modern <%= url.startsWith('/forum') ? 'active' : '' %>" href="/forum">Forum</a></li>
+      <li><a class="nav-link-modern <%= url.startsWith('/talks') ? 'active' : '' %>" href="/talks">Talks</a></li>
+      <li class="ms-2">
+        <span class="badge-modern">Beta</span>
+      </li>
     </ul>
 
-    <!-- Search (small screens hidden by default)-->
-    <form class="d-none d-lg-block ms-4" action="/search" role="search">
+    <!-- Modern Search -->
+    <form class="d-none d-lg-block ms-4 search-modern" action="/search" role="search">
       <label class="visually-hidden" for="nav-search">Search</label>
-      <input id="nav-search" name="q" type="search" class="form-control form-control-sm" placeholder="Search alumni…" />
+      <input id="nav-search" name="q" type="search" class="form-modern" placeholder="Search alumni, talks..." />
     </form>
 
-    <!-- CTA -->
-    <a class="btn btn-warning btn-sm ms-lg-4" href="/auth/login">
-      <i class="ph-sign-in me-1"></i> Sign in
-    </a>
+    <!-- CTA Button Group -->
+    <div class="d-flex gap-2 ms-lg-4 align-items-center">
+      <a class="btn btn-modern btn-modern-secondary d-none d-md-inline-flex align-items-center" href="/auth/signup">
+        <i class="ph-rocket me-2"></i> Get Started
+      </a>
+      <a class="btn btn-modern btn-modern-primary d-inline-flex align-items-center hover-lift" href="/auth/login">
+        <i class="ph-sign-in me-2"></i> Sign in
+      </a>
+    </div>
 
-    <!-- Mobile toggle -->
-    <button class="navbar-toggler d-lg-none ms-3" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNav" aria-label="Toggle navigation">
-      <i class="ph-list text-white fs-3"></i>
+    <!-- Mobile toggle with custom animation -->
+    <button class="btn btn-link text-white d-lg-none ms-3 p-2" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNav" aria-label="Toggle navigation">
+      <i class="ph-list fs-3"></i>
     </button>
   </nav>
 </header>
 
-<!-- Off‑canvas for mobile -->
-<div class="offcanvas offcanvas-end bg-dark text-white" tabindex="-1" id="offcanvasNav">
-  <div class="offcanvas-header">
-    <h5 class="offcanvas-title">Menu</h5>
+<!-- Modern Off‑canvas for mobile -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNav" style="background: var(--dark-secondary); border-left: 1px solid rgba(255,255,255,0.05);">
+  <div class="offcanvas-header border-bottom" style="border-color: rgba(255,255,255,0.05) !important;">
+    <h5 class="offcanvas-title gradient-text fw-bold">Menu</h5>
     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
   </div>
   <div class="offcanvas-body">
     <ul class="list-unstyled fs-5">
-      <li><a class="text-decoration-none d-block py-2" href="/alumni">Alumni</a></li>
-      <li><a class="text-decoration-none d-block py-2" href="/seminars">Seminars</a></li>
-      <li><a class="text-decoration-none d-block py-2" href="/forum">Forum</a></li>
-      <li><a class="text-decoration-none d-block py-2" href="/talks">Talks</a></li>
+      <li class="mb-3">
+        <a class="text-decoration-none d-flex align-items-center py-3 px-3 rounded glass-card <%= url.startsWith('/alumni') ? 'active' : '' %>" href="/alumni">
+          <i class="ph-users me-3"></i> Alumni
+        </a>
+      </li>
+      <li class="mb-3">
+        <a class="text-decoration-none d-flex align-items-center py-3 px-3 rounded glass-card <%= url.startsWith('/seminars') ? 'active' : '' %>" href="/seminars">
+          <i class="ph-presentation-chart me-3"></i> Seminars
+        </a>
+      </li>
+      <li class="mb-3">
+        <a class="text-decoration-none d-flex align-items-center py-3 px-3 rounded glass-card <%= url.startsWith('/forum') ? 'active' : '' %>" href="/forum">
+          <i class="ph-chat-circle-dots me-3"></i> Forum
+        </a>
+      </li>
+      <li class="mb-3">
+        <a class="text-decoration-none d-flex align-items-center py-3 px-3 rounded glass-card <%= url.startsWith('/talks') ? 'active' : '' %>" href="/talks">
+          <i class="ph-microphone-stage me-3"></i> Talks
+        </a>
+      </li>
     </ul>
+    
     <form class="mt-4" action="/search" role="search">
-      <input name="q" class="form-control" placeholder="Search…" />
+      <input name="q" class="form-modern w-100" placeholder="Search alumni, talks..." />
     </form>
+    
+    <div class="mt-4 d-grid gap-2">
+      <a class="btn btn-modern btn-modern-primary w-100" href="/auth/signup">
+        <i class="ph-rocket me-2"></i> Get Started
+      </a>
+      <a class="btn btn-modern btn-modern-secondary w-100" href="/auth/login">
+        <i class="ph-sign-in me-2"></i> Sign in
+      </a>
+    </div>
+    
+    <div class="mt-5 pt-5 text-center">
+      <p class="text-muted small mb-3">Connect with us</p>
+      <div class="d-flex gap-3 justify-content-center fs-4">
+        <a href="https://x.com/TrajectaOrg" class="text-decoration-none hover-lift" style="color: var(--text-secondary);">
+          <i class="ph-twitter-logo"></i>
+        </a>
+        <a href="https://github.com/Trajecta-Org" class="text-decoration-none hover-lift" style="color: var(--text-secondary);">
+          <i class="ph-github-logo"></i>
+        </a>
+        <a href="https://youtube.com/@TrajectaOrg" class="text-decoration-none hover-lift" style="color: var(--text-secondary);">
+          <i class="ph-youtube-logo"></i>
+        </a>
+      </div>
+    </div>
   </div>
 </div>
+
+<script>
+// Add scroll effect to navbar
+window.addEventListener('scroll', function() {
+  const nav = document.getElementById('main-nav');
+  if (window.scrollY > 50) {
+    nav.classList.add('scrolled');
+  } else {
+    nav.classList.remove('scrolled');
+  }
+});
+</script>

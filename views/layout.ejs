@@ -1,30 +1,51 @@
-
-
 <!doctype html>
 <html lang="en" class="h-100">
   <%- include partials/_head %>
 
-  <body class="d-flex flex-column min-vh-100 bg-body" id="top">
+  <body class="d-flex flex-column min-vh-100" id="top">
+    <!-- Loading overlay -->
+    <div class="loading-overlay position-fixed top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center" style="background: var(--dark); z-index: 9999;">
+      <div class="spinner-border" style="color: var(--primary); width: 3rem; height: 3rem;" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+
     <!-- Hero SVG sprite (single request) -->
     <svg style="display:none">
       <symbol id="rocket-icon" viewBox="0 0 24 24" fill="currentColor">
         <path d="M5 12.5 19 2l-4 17-3 3-7-9.5Z"/>
       </symbol>
+      <symbol id="trajectory-icon" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M3 3v18h18" stroke="currentColor" fill="none" stroke-width="2"/>
+        <path d="M7 15 Q 10 10, 15 12 T 20 8" stroke="currentColor" fill="none" stroke-width="2"/>
+      </symbol>
     </svg>
 
     <%- include partials/_nav %>
 
-    <main id="main" tabindex="-1" class="flex-grow-1 py-5">
-      <div class="container-lg">
-        <%- body %>
-      </div>
+
+    <main id="main" tabindex="-1" class="flex-grow-1">
+      <%- body %>
     </main>
 
     <%- include partials/_footer %>
 
-    <!-- Scripts -->
+    <!-- Scripts with performance optimization -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
-    <script src="/js/app.js?v=1" defer></script>
+    <script src="/js/modern.js?v=2" defer></script>
+    
+    <!-- Inline critical JS for loading -->
+    <script>
+      // Remove loading overlay when page is ready
+      window.addEventListener('load', function() {
+        const loader = document.querySelector('.loading-overlay');
+        if (loader) {
+          loader.style.transition = 'opacity 0.3s ease-out';
+          loader.style.opacity = '0';
+          setTimeout(() => loader.remove(), 300);
+        }
+        document.body.classList.add('loaded');
+      });
+    </script>
   </body>
 </html>

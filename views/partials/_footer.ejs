@@ -1,55 +1,173 @@
-<footer class="bg-dark text-light mt-auto border-top border-secondary pt-5">
-    <div class="container-lg row gy-4">
-      <section class="col-md-4">
-        <h2 class="h5 fw-bold text-warning">Trajecta</h2>
-        <p>Mapping talent trajectories since 2025.  
-           Powered by open data & global mentors.</p>
-        <form class="mt-3" action="/newsletter/subscribe" method="post">
-          <label for="newsletter" class="form-label">Get weekly insights</label>
-          <div class="d-flex">
-            <input id="newsletter" name="email" type="email" class="form-control rounded-0 rounded-start" placeholder="you@email.com" required />
-            <button class="btn btn-warning rounded-0 rounded-end">Join</button>
-          </div>
-        </form>
-      </section>
-  
-      <nav class="col-6 col-md-2">
-        <h3 class="h6">Explore</h3>
-        <ul class="list-unstyled">
-          <li><a href="/alumni" class="footer-link">Alumni</a></li>
-          <li><a href="/seminars" class="footer-link">Seminars</a></li>
-          <li><a href="/talks"   class="footer-link">Talks</a></li>
-          <li><a href="/forum"   class="footer-link">Forum</a></li>
-        </ul>
-      </nav>
-  
-      <nav class="col-6 col-md-2">
-        <h3 class="h6">Company</h3>
-        <ul class="list-unstyled">
-          <li><a href="/about"  class="footer-link">About</a></li>
-          <li><a href="/press"  class="footer-link">Press</a></li>
-          <li><a href="/careers"class="footer-link">Careers</a></li>
-          <li><a href="/contact"class="footer-link">Contact</a></li>
-        </ul>
-      </nav>
-  
-      <section class="col-md-4">
-        <h3 class="h6">Connect</h3>
-        <div class="d-flex gap-3 fs-4">
-          <a href="https://x.com/TrajectaOrg"      class="text-reset"><i class="ph-twitter-logo"></i></a>
-          <a href="https://github.com/Trajecta-Org" class="text-reset"><i class="ph-github-logo"></i></a>
-          <a href="https://youtube.com/@TrajectaOrg"class="text-reset"><i class="ph-youtube-logo"></i></a>
+<footer class="footer-modern mt-auto pt-5 pb-4">
+  <div class="container-lg">
+    <!-- Main Footer Grid -->
+    <div class="row gy-5 mb-5 position-relative z-1">
+      <!-- Brand Section -->
+      <section class="col-lg-4">
+        <div class="d-flex align-items-center mb-3">
+          <img src="/img/logo.svg" width="40" height="40" alt="Trajecta" class="me-3">
+          <h2 class="h4 fw-bold mb-0 gradient-text">Trajecta</h2>
         </div>
-        <address class="small mt-3">
-          <strong>Trajecta Foundation</strong><br />
-          350 5th Ave, New York, NY 10118<br />
-          <a href="mailto:hello@trajecta.org" class="footer-link">hello@trajecta.org</a>
+        <p class="text-secondary mb-4">
+          World's #1 platform mapping talent trajectories.<br/>
+          Join 1M+ future leaders charting their path to global impact.
+        </p>
+        
+        <!-- Newsletter Signup -->
+        <div class="glass-card p-3 mb-4">
+          <form action="/newsletter/subscribe" method="post">
+            <label for="newsletter" class="form-label fw-semibold mb-2">
+              <i class="ph-envelope-simple me-2"></i>Weekly Trajectory Insights
+            </label>
+            <div class="input-group">
+              <input 
+                id="newsletter" 
+                name="email" 
+                type="email" 
+                class="form-modern border-0" 
+                placeholder="your@email.com" 
+                required 
+              />
+              <button class="btn btn-modern btn-modern-primary" type="submit">
+                <i class="ph-arrow-right"></i>
+              </button>
+            </div>
+            <small class="text-muted d-block mt-2">Join 50,000+ subscribers</small>
+          </form>
+        </div>
+
+        <!-- Trust Badges -->
+        <div class="d-flex gap-3 flex-wrap">
+          <span class="badge-modern"><i class="ph-shield-check me-1"></i> SOC2 Compliant</span>
+          <span class="badge-modern"><i class="ph-lock me-1"></i> GDPR Ready</span>
+        </div>
+      </section>
+
+      <!-- Quick Links -->
+      <nav class="col-6 col-md-3 col-lg-2">
+        <h3 class="h6 fw-bold text-uppercase mb-3" style="color: var(--primary);">Platform</h3>
+        <ul class="list-unstyled">
+          <li class="mb-2"><a href="/alumni" class="footer-link-modern">Alumni Directory</a></li>
+          <li class="mb-2"><a href="/seminars" class="footer-link-modern">Live Seminars</a></li>
+          <li class="mb-2"><a href="/talks" class="footer-link-modern">Trajecta Talks</a></li>
+          <li class="mb-2"><a href="/forum" class="footer-link-modern">Community Forum</a></li>
+          <li class="mb-2"><a href="/map" class="footer-link-modern">Trajectory Map</a></li>
+        </ul>
+      </nav>
+
+      <!-- Resources -->
+      <nav class="col-6 col-md-3 col-lg-2">
+        <h3 class="h6 fw-bold text-uppercase mb-3" style="color: var(--primary);">Resources</h3>
+        <ul class="list-unstyled">
+          <li class="mb-2"><a href="/planner" class="footer-link-modern">Trajectory Planner</a></li>
+          <li class="mb-2"><a href="/mentorship" class="footer-link-modern">Find Mentors</a></li>
+          <li class="mb-2"><a href="/api" class="footer-link-modern">Developer API</a></li>
+          <li class="mb-2"><a href="/blog" class="footer-link-modern">Research Blog</a></li>
+          <li class="mb-2"><a href="/mobile" class="footer-link-modern">Mobile Apps</a></li>
+        </ul>
+      </nav>
+
+      <!-- Company -->
+      <nav class="col-6 col-md-3 col-lg-2">
+        <h3 class="h6 fw-bold text-uppercase mb-3" style="color: var(--primary);">Company</h3>
+        <ul class="list-unstyled">
+          <li class="mb-2"><a href="/about" class="footer-link-modern">About Us</a></li>
+          <li class="mb-2"><a href="/impact" class="footer-link-modern">Our Impact</a></li>
+          <li class="mb-2"><a href="/careers" class="footer-link-modern">Careers <span class="badge-modern ms-1">Hiring</span></a></li>
+          <li class="mb-2"><a href="/press" class="footer-link-modern">Press Kit</a></li>
+          <li class="mb-2"><a href="/contact" class="footer-link-modern">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Connect -->
+      <section class="col-6 col-md-3 col-lg-2">
+        <h3 class="h6 fw-bold text-uppercase mb-3" style="color: var(--primary);">Connect</h3>
+        
+        <!-- Social Icons -->
+        <div class="d-flex gap-2 mb-4">
+          <a href="https://x.com/TrajectaOrg" class="glass-card p-2 hover-lift hover-glow" style="text-decoration: none;">
+            <i class="ph-twitter-logo fs-5" style="color: var(--text-primary);"></i>
+          </a>
+          <a href="https://github.com/Trajecta-Org" class="glass-card p-2 hover-lift hover-glow" style="text-decoration: none;">
+            <i class="ph-github-logo fs-5" style="color: var(--text-primary);"></i>
+          </a>
+          <a href="https://youtube.com/@TrajectaOrg" class="glass-card p-2 hover-lift hover-glow" style="text-decoration: none;">
+            <i class="ph-youtube-logo fs-5" style="color: var(--text-primary);"></i>
+          </a>
+          <a href="https://linkedin.com/company/trajecta" class="glass-card p-2 hover-lift hover-glow" style="text-decoration: none;">
+            <i class="ph-linkedin-logo fs-5" style="color: var(--text-primary);"></i>
+          </a>
+        </div>
+
+        <!-- Contact Info -->
+        <address class="small" style="color: var(--text-secondary);">
+          <strong>Trajecta Inc.</strong><br>
+          350 5th Ave, Floor 34<br>
+          New York, NY 10118<br>
+          <a href="tel:+1-888-123-4567" class="footer-link-modern">+1 (888) 123-4567</a>
         </address>
       </section>
     </div>
-  
-    <div class="text-center border-top border-secondary mt-4 py-3 small text-muted">
-      © <%= new Date().getFullYear() %> Trajecta. All rights reserved.
+
+    <!-- Bottom Bar -->
+    <div class="border-top pt-4" style="border-color: rgba(255,255,255,0.05) !important;">
+      <div class="row align-items-center">
+        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+          <p class="mb-0 small" style="color: var(--text-muted);">
+            © <%= new Date().getFullYear() %> Trajecta, Inc. All rights reserved.
+          </p>
+        </div>
+        <div class="col-md-6">
+          <ul class="list-inline text-center text-md-end mb-0">
+            <li class="list-inline-item">
+              <a href="/privacy" class="footer-link-modern small">Privacy Policy</a>
+            </li>
+            <li class="list-inline-item ms-3">
+              <a href="/terms" class="footer-link-modern small">Terms of Service</a>
+            </li>
+            <li class="list-inline-item ms-3">
+              <a href="/cookies" class="footer-link-modern small">Cookie Settings</a>
+            </li>
+            <li class="list-inline-item ms-3">
+              <a href="/sitemap" class="footer-link-modern small">Sitemap</a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
-  </footer>
+
+    <!-- Performance Badge -->
+    <div class="text-center mt-4">
+      <div class="d-inline-flex align-items-center gap-3 small" style="color: var(--text-muted);">
+        <span><i class="ph-lightning me-1"></i>Lighthouse 95+</span>
+        <span>•</span>
+        <span><i class="ph-globe me-1"></i>Available in 12 languages</span>
+        <span>•</span>
+        <span><i class="ph-users me-1"></i>Trusted by 1M+ users</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Back to Top Button -->
+<button 
+  id="back-to-top" 
+  class="btn btn-modern btn-modern-primary position-fixed bottom-0 end-0 m-4 rounded-circle p-3 d-none hover-lift"
+  style="width: 56px; height: 56px; z-index: 1000;"
+  onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+>
+  <i class="ph-arrow-up fs-5"></i>
+</button>
+
+<script>
+// Show/hide back to top button
+window.addEventListener('scroll', function() {
+  const btn = document.getElementById('back-to-top');
+  if (window.scrollY > 300) {
+    btn.classList.remove('d-none');
+  } else {
+    btn.classList.add('d-none');
+  }
+});
+</script>
   
