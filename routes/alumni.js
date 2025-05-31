@@ -9,7 +9,7 @@ router.get("/", async (req, res) => {
   const offset = (page - 1) * limit;
   
   let query = `
-    SELECT id, name, country, medal, year, olympiad
+    SELECT id, name, surname, country, medal, year, olympiad
     FROM alumni
     WHERE ($1::text IS NULL OR olympiad = $1)
       AND ($2::text IS NULL OR country = $2)
@@ -54,11 +54,11 @@ router.get("/:id", async (req, res) => {
   );
   if (rows.length === 0) return res.redirect("/alumni");
   res.render("alumnus", { 
-    title: rows[0].name, 
+    title: rows[0].name + " " + rows[0].surname, 
     url: req.url,
     canonical: "https://trajecta.org" + req.url,
-    metaDescription: `Learn about ${rows[0].name}, ${rows[0].olympiad} medalist from ${rows[0].country}. Discover their trajectory and achievements.`,
-    ogTitle: `${rows[0].name} · ${rows[0].olympiad} Medalist`,
+    metaDescription: `Learn about ${rows[0].name}${rows[0].surname ? ' ' + rows[0].surname : ''}, ${rows[0].olympiad} medalist from ${rows[0].country}. Discover their trajectory and achievements.`,
+    ogTitle: `${rows[0].name} ${rows[0].surname} · ${rows[0].olympiad} Medalist`,
     ogImage: "https://trajecta.org/img/og-default.jpg",
     alumnus: rows[0] 
   });
